@@ -2,7 +2,6 @@ import org.eclipse.emf.henshin.model.Module;
 import org.eclipse.emf.henshin.model.resource.HenshinResourceSet;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,12 +31,4 @@ public class ModuleLoader {
         }
     }
 
-    public void saveHenshinModule(Module module, String outputPath) {
-        try {
-            module.eResource().save(null);
-            logger.log(Level.INFO, "Henshin Module with the new changes saved successfully to: " + outputPath);
-        } catch (IOException e) {
-            logger.log(Level.SEVERE, "Error saving Henshin Module: " + e.getMessage(), e);
-        }
-    }
 }
