@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ASCII"?>
+<henshin:Rule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_sXZV4Nb4Ee6xMIYJm9Cudg" name="removeManagerFromClient">
+  <parameters xmi:id="_sXZV4db4Ee6xMIYJm9Cudg" name="client" kind="IN">
+    <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </parameters>
+  <parameters xmi:id="_sXZV4tb4Ee6xMIYJm9Cudg" name="manager" kind="IN">
+    <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </parameters>
+  <lhs xmi:id="_sXZV49b4Ee6xMIYJm9Cudg" name="Lhs">
+    <nodes xmi:id="_sXZV5Nb4Ee6xMIYJm9Cudg" name="13" outgoing="_sXZV6db4Ee6xMIYJm9Cudg _sXZV6tb4Ee6xMIYJm9Cudg">
+      <type href="../../../bank.ecore#//Bank"/>
+    </nodes>
+    <nodes xmi:id="_sXZV5db4Ee6xMIYJm9Cudg" name="14" incoming="_sXZV6db4Ee6xMIYJm9Cudg _sXZV69b4Ee6xMIYJm9Cudg">
+      <type href="../../../bank.ecore#//Client"/>
+      <attributes xmi:id="_sXZV5tb4Ee6xMIYJm9Cudg" value="client">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <nodes xmi:id="_sXZV59b4Ee6xMIYJm9Cudg" name="15" incoming="_sXZV6tb4Ee6xMIYJm9Cudg" outgoing="_sXZV69b4Ee6xMIYJm9Cudg">
+      <type href="../../../bank.ecore#//Manager"/>
+      <attributes xmi:id="_sXZV6Nb4Ee6xMIYJm9Cudg" value="manager">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <edges xmi:id="_sXZV6db4Ee6xMIYJm9Cudg" source="_sXZV5Nb4Ee6xMIYJm9Cudg" target="_sXZV5db4Ee6xMIYJm9Cudg" index="">
+      <type href="../../../bank.ecore#//Bank/clients"/>
+    </edges>
+    <edges xmi:id="_sXZV6tb4Ee6xMIYJm9Cudg" source="_sXZV5Nb4Ee6xMIYJm9Cudg" target="_sXZV59b4Ee6xMIYJm9Cudg" index="">
+      <type href="../../../bank.ecore#//Bank/managers"/>
+    </edges>
+    <edges xmi:id="_sXZV69b4Ee6xMIYJm9Cudg" source="_sXZV59b4Ee6xMIYJm9Cudg" target="_sXZV5db4Ee6xMIYJm9Cudg" index="">
+      <type href="../../../bank.ecore#//Manager/clients"/>
+    </edges>
+  </lhs>
+  <rhs xmi:id="_sXZV7Nb4Ee6xMIYJm9Cudg" name="Rhs">
+    <nodes xmi:id="_sXZV7db4Ee6xMIYJm9Cudg" name="13" outgoing="_sXZV8tb4Ee6xMIYJm9Cudg _sXZV89b4Ee6xMIYJm9Cudg">
+      <type href="../../../bank.ecore#//Bank"/>
+    </nodes>
+    <nodes xmi:id="_sXZV7tb4Ee6xMIYJm9Cudg" name="14" incoming="_sXZV8tb4Ee6xMIYJm9Cudg">
+      <type href="../../../bank.ecore#//Client"/>
+      <attributes xmi:id="_sXZV79b4Ee6xMIYJm9Cudg" value="client">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <nodes xmi:id="_sXZV8Nb4Ee6xMIYJm9Cudg" name="15" incoming="_sXZV89b4Ee6xMIYJm9Cudg">
+      <type href="../../../bank.ecore#//Manager"/>
+      <attributes xmi:id="_sXZV8db4Ee6xMIYJm9Cudg" value="manager">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <edges xmi:id="_sXZV8tb4Ee6xMIYJm9Cudg" source="_sXZV7db4Ee6xMIYJm9Cudg" target="_sXZV7tb4Ee6xMIYJm9Cudg" index="">
+      <type href="../../../bank.ecore#//Bank/clients"/>
+    </edges>
+    <edges xmi:id="_sXZV89b4Ee6xMIYJm9Cudg" source="_sXZV7db4Ee6xMIYJm9Cudg" target="_sXZV8Nb4Ee6xMIYJm9Cudg" index="">
+      <type href="../../../bank.ecore#//Bank/managers"/>
+    </edges>
+  </rhs>
+  <mappings xmi:id="_sXZV9Nb4Ee6xMIYJm9Cudg" origin="_sXZV5Nb4Ee6xMIYJm9Cudg" image="_sXZV7db4Ee6xMIYJm9Cudg"/>
+  <mappings xmi:id="_sXZV9db4Ee6xMIYJm9Cudg" origin="_sXZV5db4Ee6xMIYJm9Cudg" image="_sXZV7tb4Ee6xMIYJm9Cudg"/>
+  <mappings xmi:id="_sXZV9tb4Ee6xMIYJm9Cudg" origin="_sXZV59b4Ee6xMIYJm9Cudg" image="_sXZV8Nb4Ee6xMIYJm9Cudg"/>
+</henshin:Rule>
