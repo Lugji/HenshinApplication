@@ -23,7 +23,6 @@ import org.eclipse.emf.henshin.model.Rule;
 import org.eclipse.emf.henshin.multicda.cda.DependencyAnalysis;
 import org.eclipse.emf.henshin.multicda.cda.MultiGranularAnalysis;
 import org.eclipse.emf.henshin.multicda.cda.units.Atom;
-import org.eclipse.emf.henshin.multicda.cda.units.Atom.DependencyAtom;
 import org.eclipse.emf.henshin.multicda.cda.units.Reason;
 import org.eclipse.emf.henshin.multicda.cda.units.Span;
 import org.eclipse.emf.henshin.preprocessing.Granularity;
@@ -116,7 +115,6 @@ public class HenshinDependencyDetection {
                     MultiGranularAnalysis dependencyAnalysis =
                             new DependencyAnalysis(r1, r2.getCopy());
                     Span result = dependencyAnalysis.computeResultsBinary();
-                    //DependencyAtom result = (DependencyAtom) dependencyAnalysis.computeResultsBinary();
                     log(result == null ? "0 " : "1 ");
                     tlog(System.currentTimeMillis() - time + " ");
                 }
