@@ -1,0 +1,33 @@
+Starting CDA with 6 rules.
+[MultiCDA] Computing conflict atoms:
+0 0 0 0 0 0    | createAccount
+0 1 0 0 1 0    | deleteAccount
+0 0 0 0 0 0    | assignManagerToAClient
+1 1 0 1 0 0    | removeManagerFromClient
+0 1 0 0 1 0    | moveAccountFromOneClientToAnother
+0 0 1 0 1 1    | deleteInactiveClient
+
+[MultiCDA] Computing binary granularity:
+0 0 0 0 0 0    | createAccount
+0 1 0 0 1 0    | deleteAccount
+0 0 0 0 0 0    | assignManagerToAClient
+1 1 0 1 0 0    | removeManagerFromClient
+0 1 0 0 1 0    | moveAccountFromOneClientToAnother
+0 0 1 0 1 1    | deleteInactiveClient
+
+[MultiCDA] Computing minimal conflict reasons:
+0 0 0 0 0 0    | createAccount
+0 1 0 0 1 0    | deleteAccount
+0 0 0 0 0 0    | assignManagerToAClient
+1 1 0 1 0 0    | removeManagerFromClient
+0 1 0 0 1 0    | moveAccountFromOneClientToAnother
+0 0 1 0 1 1    | deleteInactiveClient
+
+[MultiCDA] Computing initial conflict reasons:
+0 0 0 0 0 0    | createAccount
+0 1 0 0 1 0    | deleteAccount
+0 0 0 0 0 0    | assignManagerToAClient
+1 1 0 1 0 0    | removeManagerFromClient
+0 1 0 0 1 0    | moveAccountFromOneClientToAnother
+0 0 1 0 1 1    | deleteInactiveClient
+

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ASCII"?>
+<henshin:Rule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_kXhAINb2Ee6s1Jag-SQA4g" name="deleteAccount">
+  <parameters xmi:id="_kXhAIdb2Ee6s1Jag-SQA4g" name="client" kind="IN">
+    <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </parameters>
+  <parameters xmi:id="_kXhAItb2Ee6s1Jag-SQA4g" name="manager" kind="IN">
+    <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </parameters>
+  <lhs xmi:id="_kXhAI9b2Ee6s1Jag-SQA4g" name="LHS">
+    <nodes xmi:id="_kXhAJNb2Ee6s1Jag-SQA4g" name="6" incoming="_kXhAK9b2Ee6s1Jag-SQA4g _kXhALNb2Ee6s1Jag-SQA4g _kXhALtb2Ee6s1Jag-SQA4g">
+      <type href="../../../bank.ecore#//Client"/>
+      <attributes xmi:id="_kXhAJdb2Ee6s1Jag-SQA4g" value="client">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <nodes xmi:id="_kXhAJtb2Ee6s1Jag-SQA4g" name="7" outgoing="_kXhAKtb2Ee6s1Jag-SQA4g _kXhAK9b2Ee6s1Jag-SQA4g _kXhALdb2Ee6s1Jag-SQA4g">
+      <type href="../../../bank.ecore#//Bank"/>
+    </nodes>
+    <nodes xmi:id="_kXhAJ9b2Ee6s1Jag-SQA4g" name="8" incoming="_kXhAKtb2Ee6s1Jag-SQA4g" outgoing="_kXhALNb2Ee6s1Jag-SQA4g">
+      <type href="../../../bank.ecore#//Manager"/>
+      <attributes xmi:id="_kXhAKNb2Ee6s1Jag-SQA4g" value="manager">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <nodes xmi:id="_kXhAKdb2Ee6s1Jag-SQA4g" name="9" incoming="_kXhALdb2Ee6s1Jag-SQA4g" outgoing="_kXhALtb2Ee6s1Jag-SQA4g">
+      <type href="../../../bank.ecore#//Account"/>
+    </nodes>
+    <edges xmi:id="_kXhAKtb2Ee6s1Jag-SQA4g" source="_kXhAJtb2Ee6s1Jag-SQA4g" target="_kXhAJ9b2Ee6s1Jag-SQA4g" index="">
+      <type href="../../../bank.ecore#//Bank/managers"/>
+    </edges>
+    <edges xmi:id="_kXhAK9b2Ee6s1Jag-SQA4g" source="_kXhAJtb2Ee6s1Jag-SQA4g" target="_kXhAJNb2Ee6s1Jag-SQA4g" index="">
+      <type href="../../../bank.ecore#//Bank/clients"/>
+    </edges>
+    <edges xmi:id="_kXhALNb2Ee6s1Jag-SQA4g" source="_kXhAJ9b2Ee6s1Jag-SQA4g" target="_kXhAJNb2Ee6s1Jag-SQA4g" index="">
+      <type href="../../../bank.ecore#//Manager/clients"/>
+    </edges>
+    <edges xmi:id="_kXhALdb2Ee6s1Jag-SQA4g" source="_kXhAJtb2Ee6s1Jag-SQA4g" target="_kXhAKdb2Ee6s1Jag-SQA4g" index="">
+      <type href="../../../bank.ecore#//Bank/accounts"/>
+    </edges>
+    <edges xmi:id="_kXhALtb2Ee6s1Jag-SQA4g" source="_kXhAKdb2Ee6s1Jag-SQA4g" target="_kXhAJNb2Ee6s1Jag-SQA4g" index="">
+      <type href="../../../bank.ecore#//Account/owner"/>
+    </edges>
+  </lhs>
+  <rhs xmi:id="_kXhAL9b2Ee6s1Jag-SQA4g" name="RHS">
+    <nodes xmi:id="_kXhAMNb2Ee6s1Jag-SQA4g" name="6" incoming="_kXhANtb2Ee6s1Jag-SQA4g _kXhAN9b2Ee6s1Jag-SQA4g">
+      <type href="../../../bank.ecore#//Client"/>
+      <attributes xmi:id="_kXhAMdb2Ee6s1Jag-SQA4g" value="client">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <nodes xmi:id="_kXhAMtb2Ee6s1Jag-SQA4g" name="7" outgoing="_kXhANdb2Ee6s1Jag-SQA4g _kXhANtb2Ee6s1Jag-SQA4g">
+      <type href="../../../bank.ecore#//Bank"/>
+    </nodes>
+    <nodes xmi:id="_kXhAM9b2Ee6s1Jag-SQA4g" name="8" incoming="_kXhANdb2Ee6s1Jag-SQA4g" outgoing="_kXhAN9b2Ee6s1Jag-SQA4g">
+      <type href="../../../bank.ecore#//Manager"/>
+      <attributes xmi:id="_kXhANNb2Ee6s1Jag-SQA4g" value="manager">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <edges xmi:id="_kXhANdb2Ee6s1Jag-SQA4g" source="_kXhAMtb2Ee6s1Jag-SQA4g" target="_kXhAM9b2Ee6s1Jag-SQA4g" index="">
+      <type href="../../../bank.ecore#//Bank/managers"/>
+    </edges>
+    <edges xmi:id="_kXhANtb2Ee6s1Jag-SQA4g" source="_kXhAMtb2Ee6s1Jag-SQA4g" target="_kXhAMNb2Ee6s1Jag-SQA4g" index="">
+      <type href="../../../bank.ecore#//Bank/clients"/>
+    </edges>
+    <edges xmi:id="_kXhAN9b2Ee6s1Jag-SQA4g" source="_kXhAM9b2Ee6s1Jag-SQA4g" target="_kXhAMNb2Ee6s1Jag-SQA4g" index="">
+      <type href="../../../bank.ecore#//Manager/clients"/>
+    </edges>
+  </rhs>
+  <mappings xmi:id="_kXhAONb2Ee6s1Jag-SQA4g" origin="_kXhAJNb2Ee6s1Jag-SQA4g" image="_kXhAMNb2Ee6s1Jag-SQA4g"/>
+  <mappings xmi:id="_kXhAOdb2Ee6s1Jag-SQA4g" origin="_kXhAJtb2Ee6s1Jag-SQA4g" image="_kXhAMtb2Ee6s1Jag-SQA4g"/>
+  <mappings xmi:id="_kXhAOtb2Ee6s1Jag-SQA4g" origin="_kXhAJ9b2Ee6s1Jag-SQA4g" image="_kXhAM9b2Ee6s1Jag-SQA4g"/>
+</henshin:Rule>

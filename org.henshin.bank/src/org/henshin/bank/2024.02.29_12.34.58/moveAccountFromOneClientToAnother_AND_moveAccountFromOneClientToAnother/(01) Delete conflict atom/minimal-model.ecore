@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="moveAccountFromOneClientToAnother_moveAccountFromOneClientToAnother"
+    nsURI="http://cdapackage/moveAccountFromOneClientToAnother/moveAccountFromOneClientToAnother/DeleteConflictAtom"
+    nsPrefix="CDAPackage">
+  <eClassifiers xsi:type="ecore:EClass" name="19_19:Account">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="#owner#" eType="#//17_17%3AClient"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="17_17:Client">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name=fromClient _ fromClient"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

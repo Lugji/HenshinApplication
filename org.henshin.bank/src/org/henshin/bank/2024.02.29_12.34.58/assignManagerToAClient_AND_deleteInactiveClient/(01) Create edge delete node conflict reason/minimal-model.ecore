@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="assignManagerToAClient_deleteInactiveClient" nsURI="http://cdapackage/assignManagerToAClient/deleteInactiveClient/CreateEdgeDeleteNodeConflictReason"
+    nsPrefix="CDAPackage">
+  <eClassifiers xsi:type="ecore:EClass" name="#11_21:Client#">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name=client _ client" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="#10_20:Bank#">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="#clients#" eType="#//%2311_21%3AClient%23"/>
+  </eClassifiers>
+</ecore:EPackage>

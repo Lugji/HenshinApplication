@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore">
+  <ecore:EPackage name="deleteAccount_moveAccountFromOneClientToAnother" nsURI="http://cdapackage/deleteAccount/moveAccountFromOneClientToAnother/SymmetricReason"
+      nsPrefix="CDAPackage">
+    <eClassifiers xsi:type="ecore:EClass" name="#9_19:Account#">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="#owner#" eType="#/0/6_17%3AClient"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="6_17:Client">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name=client _ fromClient->fromClient"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="7_16:Bank">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="#accounts#" eType="#/0/%239_19%3AAccount%23"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ecore:EPackage name="moveAccountFromOneClientToAnother_deleteAccount" nsURI="http://cdapackage/moveAccountFromOneClientToAnother/deleteAccount/DeleteConflictReason"
+      nsPrefix="CDAPackage">
+    <eClassifiers xsi:type="ecore:EClass" name="19_9:Account">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="#owner#" eType="#/1/17_6%3AClient"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="17_6:Client">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name=fromClient _ client->client"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+  </ecore:EPackage>
+</xmi:XMI>
