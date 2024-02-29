@@ -20,7 +20,7 @@ public class MainClass {
                     //System.out.println("Found Rule: " + rule.getName());
                     // Assign node names using NamingNullNodes
                     NamingNullNodes nodeNameAssigner = new NamingNullNodes();
-                    nodeNameAssigner.assignNodeNames(rule);;
+                    nodeNameAssigner.assignNodeNames(rule);
 
                 }
             }
