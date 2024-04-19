@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ASCII"?>
+<henshin:Rule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_UAp5wPrBEe61Ybucu5berg" name="deleteManager">
+  <parameters xmi:id="_UAp5wfrBEe61Ybucu5berg" name="manager" kind="IN">
+    <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </parameters>
+  <lhs xmi:id="_UAp5wvrBEe61Ybucu5berg" name="Lhs">
+    <nodes xmi:id="_UAp5w_rBEe61Ybucu5berg" name="|0|" outgoing="_UAp5x_rBEe61Ybucu5berg _UAp5yfrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Bank"/>
+    </nodes>
+    <nodes xmi:id="_UAp5xPrBEe61Ybucu5berg" name="|2|" incoming="_UAp5x_rBEe61Ybucu5berg" outgoing="_UAp5yPrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Manager"/>
+      <attributes xmi:id="_UAp5xfrBEe61Ybucu5berg" value="manager">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <nodes xmi:id="_UAp5xvrBEe61Ybucu5berg" name="|1|" incoming="_UAp5yPrBEe61Ybucu5berg _UAp5yfrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Client"/>
+    </nodes>
+    <edges xmi:id="_UAp5x_rBEe61Ybucu5berg" source="_UAp5w_rBEe61Ybucu5berg" target="_UAp5xPrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Bank/managers"/>
+    </edges>
+    <edges xmi:id="_UAp5yPrBEe61Ybucu5berg" source="_UAp5xPrBEe61Ybucu5berg" target="_UAp5xvrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Manager/clients"/>
+    </edges>
+    <edges xmi:id="_UAp5yfrBEe61Ybucu5berg" source="_UAp5w_rBEe61Ybucu5berg" target="_UAp5xvrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Bank/clients"/>
+    </edges>
+  </lhs>
+  <rhs xmi:id="_UAp5yvrBEe61Ybucu5berg" name="Rhs">
+    <nodes xmi:id="_UAp5y_rBEe61Ybucu5berg" name="|0|" outgoing="_UAp5zfrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Bank"/>
+    </nodes>
+    <nodes xmi:id="_UAp5zPrBEe61Ybucu5berg" name="|1|" incoming="_UAp5zfrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Client"/>
+    </nodes>
+    <edges xmi:id="_UAp5zfrBEe61Ybucu5berg" source="_UAp5y_rBEe61Ybucu5berg" target="_UAp5zPrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Bank/clients"/>
+    </edges>
+  </rhs>
+  <mappings xmi:id="_UAp5zvrBEe61Ybucu5berg" origin="_UAp5w_rBEe61Ybucu5berg" image="_UAp5y_rBEe61Ybucu5berg"/>
+  <mappings xmi:id="_UAp5z_rBEe61Ybucu5berg" origin="_UAp5xvrBEe61Ybucu5berg" image="_UAp5zPrBEe61Ybucu5berg"/>
+</henshin:Rule>

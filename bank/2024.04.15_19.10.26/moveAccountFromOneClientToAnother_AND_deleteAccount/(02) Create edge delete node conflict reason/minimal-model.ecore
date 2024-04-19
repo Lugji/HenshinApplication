@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="moveAccountFromOneClientToAnother_deleteAccount" nsURI="http://cdapackage/moveAccountFromOneClientToAnother/deleteAccount/CreateEdgeDeleteNodeConflictReason"
+    nsPrefix="CDAPackage">
+  <eClassifiers xsi:type="ecore:EClass" name="#|3|_|7|:Account#">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="#owner#" eType="#//%23|1|_|4|%3AClient%23"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="#|1|_|4|:Client#">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name=fromClient _ client->client"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="#|0|_|5|:Bank#">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="#accounts#" eType="#//%23|3|_|7|%3AAccount%23"/>
+  </eClassifiers>
+</ecore:EPackage>

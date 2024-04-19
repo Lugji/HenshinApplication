@@ -1,0 +1,27 @@
+73 12 7 27 10 11 15 6    | createAccount
+5 21 4 4 12 5 10 2    | deleteAccount
+3 4 4 3 4 6 4 2    | assignManagerToAClient
+4 5 3 5 3 3 8 2    | removeManagerFromClient
+3 13 7 4 8 7 3 4    | moveAccountFromOneClientToAnother
+4 3 6 4 4 4 5 3    | deleteInactiveClient
+6 9 4 7 3 3 8 4    | deleteManager
+2 2 2 2 2 2 3 2    | createAClientWithAnAccAndManager
+
+4 3 2 3 4 4 5 2    | createAccount
+4 13 2 3 8 4 6 2    | deleteAccount
+3 2 2 2 2 4 4 2    | assignManagerToAClient
+4 3 2 6 3 3 6 2    | removeManagerFromClient
+3 15 3 2 5 3 14 1    | moveAccountFromOneClientToAnother
+2 3 3 2 5 6 2 2    | deleteInactiveClient
+5 7 3 5 2 3 8 3    | deleteManager
+1 2 2 2 2 2 3 1    | createAClientWithAnAccAndManager
+
+4 2 2 3 2 3 7 4    | createAccount
+2 15 2 2 8 4 4 3    | deleteAccount
+2 2 2 3 4 3 3 1    | assignManagerToAClient
+3 3 2 4 2 3 6 1    | removeManagerFromClient
+2 11 2 2 5 3 2 3    | moveAccountFromOneClientToAnother
+4 4 4 2 4 6 2 1    | deleteInactiveClient
+5 5 3 5 2 2 6 2    | deleteManager
+1 2 1 1 1 1 3 1    | createAClientWithAnAccAndManager
+

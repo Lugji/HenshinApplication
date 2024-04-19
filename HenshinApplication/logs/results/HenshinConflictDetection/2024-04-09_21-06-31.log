@@ -1,0 +1,30 @@
+Computing binary granularity:
+0 0 0 0 0 0 0 0    | createAccount
+0 1 0 0 1 1 0 0    | deleteAccount
+0 0 0 0 0 1 1 0    | assignManagerToAClient
+1 1 0 1 0 0 1 0    | removeManagerFromClient
+0 1 0 0 1 1 0 0    | moveAccountFromOneClientToAnother
+0 0 1 0 1 1 0 0    | deleteInactiveClient
+1 1 1 1 0 0 1 1    | deleteManager
+0 0 0 0 0 0 1 0    | createAClientWithAnAccAndManager
+
+Computing minimal conflict reasons:
+0 0 0 0 0 0 0 0    | createAccount
+0 1 0 0 1 1 0 0    | deleteAccount
+0 0 0 0 0 1 1 0    | assignManagerToAClient
+1 1 0 1 0 0 1 0    | removeManagerFromClient
+0 2 0 0 1 1 0 0    | moveAccountFromOneClientToAnother
+0 0 1 0 1 2 0 0    | deleteInactiveClient
+1 1 1 1 0 0 1 1    | deleteManager
+0 0 0 0 0 0 1 0    | createAClientWithAnAccAndManager
+
+Computing initial conflict reasons:
+0 0 0 0 0 0 0 0    | createAccount
+0 1 0 0 1 1 0 0    | deleteAccount
+0 0 0 0 0 1 1 0    | assignManagerToAClient
+1 1 0 1 0 0 1 0    | removeManagerFromClient
+0 2 0 0 1 1 0 0    | moveAccountFromOneClientToAnother
+0 0 1 0 1 2 0 0    | deleteInactiveClient
+1 1 1 1 0 0 1 1    | deleteManager
+0 0 0 0 0 0 1 0    | createAClientWithAnAccAndManager
+
