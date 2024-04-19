@@ -88,13 +88,13 @@ Analyze a set of Cypher queries for potential conflicts within a graph database 
                     outputBuilder.append("\n").append("\n");
                 }
             }
-            System.out.println(outputBuilder);
+            //System.out.println(outputBuilder);
         }       
 
          // Initialize and start ChatGPT API for interaction with GPT API
          // Start chat interaction with concatenated prompts and generated Cypher queries
-         //ChatGPT_API chatGPTAPI = new ChatGPT_API();
-         //chatGPTAPI.startChat(prompt + outputBuilder);
+         ChatGPT_API chatGPTAPI = new ChatGPT_API();
+         chatGPTAPI.startChat(prompt + outputBuilder);
     }
 }
 
