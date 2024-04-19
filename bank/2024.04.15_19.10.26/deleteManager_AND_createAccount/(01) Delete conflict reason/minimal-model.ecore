@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="deleteManager_createAccount" nsURI="http://cdapackage/deleteManager/createAccount/DeleteConflictReason"
+    nsPrefix="CDAPackage">
+  <eClassifiers xsi:type="ecore:EClass" name="#|2|_|6|:Manager#">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name=manager _ manager"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="#clients#" eType="#//|1|_|5|%3AClient"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="|0|_|3|:Bank">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="#managers#" eType="#//%23|2|_|6|%3AManager%23"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="|1|_|5|:Client"/>
+</ecore:EPackage>

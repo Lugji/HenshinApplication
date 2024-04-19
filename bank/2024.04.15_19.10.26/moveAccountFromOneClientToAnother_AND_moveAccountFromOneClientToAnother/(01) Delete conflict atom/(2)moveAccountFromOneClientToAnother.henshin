@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ASCII"?>
+<henshin:Rule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_Dfk5YPtLEe6AtqWp7RSoYQ" name="moveAccountFromOneClientToAnother">
+  <parameters xmi:id="_Dfk5YftLEe6AtqWp7RSoYQ" name="fromClient" kind="IN">
+    <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </parameters>
+  <parameters xmi:id="_Dfk5YvtLEe6AtqWp7RSoYQ" name="toClient" kind="IN">
+    <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </parameters>
+  <lhs xmi:id="_Dfk5Y_tLEe6AtqWp7RSoYQ" name="Lhs">
+    <nodes xmi:id="_Dfk5ZPtLEe6AtqWp7RSoYQ" name="|4|" outgoing="_Dfk5avtLEe6AtqWp7RSoYQ _Dfk5a_tLEe6AtqWp7RSoYQ _Dfk5bPtLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Bank"/>
+    </nodes>
+    <nodes xmi:id="_Dfk5ZftLEe6AtqWp7RSoYQ" name="|5|" incoming="_Dfk5bPtLEe6AtqWp7RSoYQ _Dfk5bftLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Client"/>
+      <attributes xmi:id="_Dfk5ZvtLEe6AtqWp7RSoYQ" value="fromClient">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <nodes xmi:id="_Dfk5Z_tLEe6AtqWp7RSoYQ" name="|6|" incoming="_Dfk5a_tLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Client"/>
+      <attributes xmi:id="_Dfk5aPtLEe6AtqWp7RSoYQ" value="toClient">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <nodes xmi:id="_Dfk5aftLEe6AtqWp7RSoYQ" name="|7|" incoming="_Dfk5avtLEe6AtqWp7RSoYQ" outgoing="_Dfk5bftLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Account"/>
+    </nodes>
+    <edges xmi:id="_Dfk5avtLEe6AtqWp7RSoYQ" source="_Dfk5ZPtLEe6AtqWp7RSoYQ" target="_Dfk5aftLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Bank/accounts"/>
+    </edges>
+    <edges xmi:id="_Dfk5a_tLEe6AtqWp7RSoYQ" source="_Dfk5ZPtLEe6AtqWp7RSoYQ" target="_Dfk5Z_tLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Bank/clients"/>
+    </edges>
+    <edges xmi:id="_Dfk5bPtLEe6AtqWp7RSoYQ" source="_Dfk5ZPtLEe6AtqWp7RSoYQ" target="_Dfk5ZftLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Bank/clients"/>
+    </edges>
+    <edges xmi:id="_Dfk5bftLEe6AtqWp7RSoYQ" source="_Dfk5aftLEe6AtqWp7RSoYQ" target="_Dfk5ZftLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Account/owner"/>
+    </edges>
+  </lhs>
+  <rhs xmi:id="_Dfk5bvtLEe6AtqWp7RSoYQ" name="Rhs">
+    <nodes xmi:id="_Dfk5b_tLEe6AtqWp7RSoYQ" name="|4|" outgoing="_Dfk5dftLEe6AtqWp7RSoYQ _Dfk5dvtLEe6AtqWp7RSoYQ _Dfk5d_tLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Bank"/>
+    </nodes>
+    <nodes xmi:id="_Dfk5cPtLEe6AtqWp7RSoYQ" name="|5|" incoming="_Dfk5d_tLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Client"/>
+      <attributes xmi:id="_Dfk5cftLEe6AtqWp7RSoYQ" value="fromClient">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <nodes xmi:id="_Dfk5cvtLEe6AtqWp7RSoYQ" name="|6|" incoming="_Dfk5dvtLEe6AtqWp7RSoYQ _Dfk5ePtLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Client"/>
+      <attributes xmi:id="_Dfk5c_tLEe6AtqWp7RSoYQ" value="toClient">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <nodes xmi:id="_Dfk5dPtLEe6AtqWp7RSoYQ" name="|7|" incoming="_Dfk5dftLEe6AtqWp7RSoYQ" outgoing="_Dfk5ePtLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Account"/>
+    </nodes>
+    <edges xmi:id="_Dfk5dftLEe6AtqWp7RSoYQ" source="_Dfk5b_tLEe6AtqWp7RSoYQ" target="_Dfk5dPtLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Bank/accounts"/>
+    </edges>
+    <edges xmi:id="_Dfk5dvtLEe6AtqWp7RSoYQ" source="_Dfk5b_tLEe6AtqWp7RSoYQ" target="_Dfk5cvtLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Bank/clients"/>
+    </edges>
+    <edges xmi:id="_Dfk5d_tLEe6AtqWp7RSoYQ" source="_Dfk5b_tLEe6AtqWp7RSoYQ" target="_Dfk5cPtLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Bank/clients"/>
+    </edges>
+    <edges xmi:id="_Dfk5ePtLEe6AtqWp7RSoYQ" source="_Dfk5dPtLEe6AtqWp7RSoYQ" target="_Dfk5cvtLEe6AtqWp7RSoYQ">
+      <type href="../../../bank.ecore#//Account/owner"/>
+    </edges>
+  </rhs>
+  <mappings xmi:id="_Dfk5eftLEe6AtqWp7RSoYQ" origin="_Dfk5ZPtLEe6AtqWp7RSoYQ" image="_Dfk5b_tLEe6AtqWp7RSoYQ"/>
+  <mappings xmi:id="_Dfk5evtLEe6AtqWp7RSoYQ" origin="_Dfk5ZftLEe6AtqWp7RSoYQ" image="_Dfk5cPtLEe6AtqWp7RSoYQ"/>
+  <mappings xmi:id="_Dfk5e_tLEe6AtqWp7RSoYQ" origin="_Dfk5Z_tLEe6AtqWp7RSoYQ" image="_Dfk5cvtLEe6AtqWp7RSoYQ"/>
+  <mappings xmi:id="_Dfk5fPtLEe6AtqWp7RSoYQ" origin="_Dfk5aftLEe6AtqWp7RSoYQ" image="_Dfk5dPtLEe6AtqWp7RSoYQ"/>
+</henshin:Rule>

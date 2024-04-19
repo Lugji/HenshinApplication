@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ASCII"?>
+<henshin:Rule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_UAsWAPrBEe61Ybucu5berg" name="createAccount">
+  <parameters xmi:id="_UAsWAfrBEe61Ybucu5berg" name="client" kind="IN">
+    <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </parameters>
+  <parameters xmi:id="_UAsWAvrBEe61Ybucu5berg" name="accountId" kind="IN">
+    <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </parameters>
+  <parameters xmi:id="_UAsWA_rBEe61Ybucu5berg" name="manager" kind="IN">
+    <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </parameters>
+  <lhs xmi:id="_UAsWBPrBEe61Ybucu5berg" name="LHS">
+    <nodes xmi:id="_UAsWBfrBEe61Ybucu5berg" name="|3|" outgoing="_UAsWCvrBEe61Ybucu5berg _UAsWC_rBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Bank"/>
+    </nodes>
+    <nodes xmi:id="_UAsWBvrBEe61Ybucu5berg" name="|5|" incoming="_UAsWCvrBEe61Ybucu5berg _UAsWDPrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Client"/>
+      <attributes xmi:id="_UAsWB_rBEe61Ybucu5berg" value="client">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <nodes xmi:id="_UAsWCPrBEe61Ybucu5berg" name="|6|" incoming="_UAsWC_rBEe61Ybucu5berg" outgoing="_UAsWDPrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Manager"/>
+      <attributes xmi:id="_UAsWCfrBEe61Ybucu5berg" value="manager">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <edges xmi:id="_UAsWCvrBEe61Ybucu5berg" source="_UAsWBfrBEe61Ybucu5berg" target="_UAsWBvrBEe61Ybucu5berg" index="">
+      <type href="../../../bank.ecore#//Bank/clients"/>
+    </edges>
+    <edges xmi:id="_UAsWC_rBEe61Ybucu5berg" source="_UAsWBfrBEe61Ybucu5berg" target="_UAsWCPrBEe61Ybucu5berg" index="">
+      <type href="../../../bank.ecore#//Bank/managers"/>
+    </edges>
+    <edges xmi:id="_UAsWDPrBEe61Ybucu5berg" source="_UAsWCPrBEe61Ybucu5berg" target="_UAsWBvrBEe61Ybucu5berg" index="">
+      <type href="../../../bank.ecore#//Manager/clients"/>
+    </edges>
+    <formula xsi:type="henshin:Not" xmi:id="_UAsWDfrBEe61Ybucu5berg">
+      <child xsi:type="henshin:NestedCondition" xmi:id="_UAsWDvrBEe61Ybucu5berg">
+        <conclusion xmi:id="_UAsWD_rBEe61Ybucu5berg" name="">
+          <nodes xmi:id="_UAsWEPrBEe61Ybucu5berg" name="" outgoing="_UAsWF_rBEe61Ybucu5berg _UAsWGPrBEe61Ybucu5berg _UAsWGfrBEe61Ybucu5berg">
+            <type href="../../../bank.ecore#//Bank"/>
+          </nodes>
+          <nodes xmi:id="_UAsWEfrBEe61Ybucu5berg" name="" incoming="_UAsWF_rBEe61Ybucu5berg">
+            <type href="../../../bank.ecore#//Account"/>
+            <attributes xmi:id="_UAsWEvrBEe61Ybucu5berg" value="accountId">
+              <type href="../../../bank.ecore#//Account/id"/>
+            </attributes>
+          </nodes>
+          <nodes xmi:id="_UAsWE_rBEe61Ybucu5berg" name="" incoming="_UAsWGPrBEe61Ybucu5berg _UAsWGvrBEe61Ybucu5berg">
+            <type href="../../../bank.ecore#//Client"/>
+            <attributes xmi:id="_UAsWFPrBEe61Ybucu5berg" value="client">
+              <type href="../../../bank.ecore#//Person/name"/>
+            </attributes>
+          </nodes>
+          <nodes xmi:id="_UAsWFfrBEe61Ybucu5berg" name="" incoming="_UAsWGfrBEe61Ybucu5berg" outgoing="_UAsWGvrBEe61Ybucu5berg">
+            <type href="../../../bank.ecore#//Manager"/>
+            <attributes xmi:id="_UAsWFvrBEe61Ybucu5berg" value="manager">
+              <type href="../../../bank.ecore#//Person/name"/>
+            </attributes>
+          </nodes>
+          <edges xmi:id="_UAsWF_rBEe61Ybucu5berg" source="_UAsWEPrBEe61Ybucu5berg" target="_UAsWEfrBEe61Ybucu5berg" index="">
+            <type href="../../../bank.ecore#//Bank/accounts"/>
+          </edges>
+          <edges xmi:id="_UAsWGPrBEe61Ybucu5berg" source="_UAsWEPrBEe61Ybucu5berg" target="_UAsWE_rBEe61Ybucu5berg">
+            <type href="../../../bank.ecore#//Bank/clients"/>
+          </edges>
+          <edges xmi:id="_UAsWGfrBEe61Ybucu5berg" source="_UAsWEPrBEe61Ybucu5berg" target="_UAsWFfrBEe61Ybucu5berg">
+            <type href="../../../bank.ecore#//Bank/managers"/>
+          </edges>
+          <edges xmi:id="_UAsWGvrBEe61Ybucu5berg" source="_UAsWFfrBEe61Ybucu5berg" target="_UAsWE_rBEe61Ybucu5berg">
+            <type href="../../../bank.ecore#//Manager/clients"/>
+          </edges>
+        </conclusion>
+        <mappings xmi:id="_UAsWG_rBEe61Ybucu5berg" origin="_UAsWBfrBEe61Ybucu5berg" image="_UAsWEPrBEe61Ybucu5berg"/>
+        <mappings xmi:id="_UAsWHPrBEe61Ybucu5berg" origin="_UAsWBvrBEe61Ybucu5berg" image="_UAsWE_rBEe61Ybucu5berg"/>
+        <mappings xmi:id="_UAsWHfrBEe61Ybucu5berg" origin="_UAsWCPrBEe61Ybucu5berg" image="_UAsWFfrBEe61Ybucu5berg"/>
+      </child>
+    </formula>
+  </lhs>
+  <rhs xmi:id="_UAsWHvrBEe61Ybucu5berg" name="RHS">
+    <nodes xmi:id="_UAsWH_rBEe61Ybucu5berg" name="|3|" outgoing="_UAsWJvrBEe61Ybucu5berg _UAsWJ_rBEe61Ybucu5berg _UAsWKPrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Bank"/>
+    </nodes>
+    <nodes xmi:id="_UAsWIPrBEe61Ybucu5berg" name="|4|" incoming="_UAsWKPrBEe61Ybucu5berg _UAsWKfrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Account"/>
+      <attributes xmi:id="_UAsWIfrBEe61Ybucu5berg" value="accountId">
+        <type href="../../../bank.ecore#//Account/id"/>
+      </attributes>
+    </nodes>
+    <nodes xmi:id="_UAsWIvrBEe61Ybucu5berg" name="|5|" incoming="_UAsWJvrBEe61Ybucu5berg _UAsWKvrBEe61Ybucu5berg" outgoing="_UAsWKfrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Client"/>
+      <attributes xmi:id="_UAsWI_rBEe61Ybucu5berg" value="client">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <nodes xmi:id="_UAsWJPrBEe61Ybucu5berg" name="|6|" incoming="_UAsWJ_rBEe61Ybucu5berg" outgoing="_UAsWKvrBEe61Ybucu5berg">
+      <type href="../../../bank.ecore#//Manager"/>
+      <attributes xmi:id="_UAsWJfrBEe61Ybucu5berg" value="manager">
+        <type href="../../../bank.ecore#//Person/name"/>
+      </attributes>
+    </nodes>
+    <edges xmi:id="_UAsWJvrBEe61Ybucu5berg" source="_UAsWH_rBEe61Ybucu5berg" target="_UAsWIvrBEe61Ybucu5berg" index="">
+      <type href="../../../bank.ecore#//Bank/clients"/>
+    </edges>
+    <edges xmi:id="_UAsWJ_rBEe61Ybucu5berg" source="_UAsWH_rBEe61Ybucu5berg" target="_UAsWJPrBEe61Ybucu5berg" index="">
+      <type href="../../../bank.ecore#//Bank/managers"/>
+    </edges>
+    <edges xmi:id="_UAsWKPrBEe61Ybucu5berg" source="_UAsWH_rBEe61Ybucu5berg" target="_UAsWIPrBEe61Ybucu5berg" index="">
+      <type href="../../../bank.ecore#//Bank/accounts"/>
+    </edges>
+    <edges xmi:id="_UAsWKfrBEe61Ybucu5berg" source="_UAsWIvrBEe61Ybucu5berg" target="_UAsWIPrBEe61Ybucu5berg" index="">
+      <type href="../../../bank.ecore#//Client/accounts"/>
+    </edges>
+    <edges xmi:id="_UAsWKvrBEe61Ybucu5berg" source="_UAsWJPrBEe61Ybucu5berg" target="_UAsWIvrBEe61Ybucu5berg" index="">
+      <type href="../../../bank.ecore#//Manager/clients"/>
+    </edges>
+  </rhs>
+  <mappings xmi:id="_UAsWK_rBEe61Ybucu5berg" origin="_UAsWBfrBEe61Ybucu5berg" image="_UAsWH_rBEe61Ybucu5berg"/>
+  <mappings xmi:id="_UAsWLPrBEe61Ybucu5berg" origin="_UAsWBvrBEe61Ybucu5berg" image="_UAsWIvrBEe61Ybucu5berg"/>
+  <mappings xmi:id="_UAsWLfrBEe61Ybucu5berg" origin="_UAsWCPrBEe61Ybucu5berg" image="_UAsWJPrBEe61Ybucu5berg"/>
+</henshin:Rule>
