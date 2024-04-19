@@ -49,6 +49,32 @@ Analyze a set of Cypher queries for potential conflicts within a graph database 
 ** Queries**:
 
 """);
+
+	private static final String prompt = String.format(""" 
+**Objective**:
+Analyze a set of Cypher queries for potential dependencies within a graph database context.
+
+**Dependency Criteria**:
+1. **Creation-Dependency*: Occurs when a query CREATEs a graph element (node or relationship) that is required by another query for its `MATCH` condition.
+2. **Deletion-Forbid Dependency**: Arises when a query DELETEs an element that would violate a negative application condition of another query.
+
+**Graph Elements**:
+- **Nodes**: Represent entities such as Bank, Account, Client, and Manager.
+- **Relationships**: Indicate connections between nodes, such as CLIENTS, ACCOUNTS, MANAGERS, and OWNER.
+
+**Tasks**:
+1. **Identify Relationships**: For each query, list the nodes and relationships directly involved in `CREATE` or `DELETE` or `WHERE NOT` actions.
+2. **Analyze Interactions**: Examine the potential impact of each query on the others, focusing on the dependencies criteria outlined.
+3. **Matrix Representation**: Represent the analysis results as a binary matrix, where rows and columns correspond to the queries in order. Use "1" to indicate a dependency between two queries and "0" for no dependency.
+
+**Enhancements**:
+- Provide brief descriptions of the purpose behind each query to contextualize the analysis.
+- Consider edge cases, such as indirect effects a query might have due to changes in the graph structure, which could influence the applicability of other queries.
+- Include examples of specific scenarios where dependencies might arise, based on the graph elements involved.
+
+** Queries**:
+
+""");
     
      
      
