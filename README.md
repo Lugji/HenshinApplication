@@ -3,52 +3,38 @@
 This repository provides the codebase of my bachelor’s thesis **Analysis of Conflicts and Dependencies between User Stories in the Age of ChatGPT** in model-driven engineering, conducted in the **[Software Engineering](https://www.uni-marburg.de/en/fb12/research-groups/swt)** research group. The project ties together workflows around [Henshin](https://projects.eclipse.org/projects/modeling.emft.henshin)—an in-place transformation language for the [Eclipse Modeling Framework (EMF)](https://eclipse.dev/emf/)—to (i) translate rule-based graph transformations into [Cypher](https://neo4j.com/docs/getting-started/cypher/) queries, (ii) detect conflicts and dependencies between transformation rules with EMF (MultiCDA), and (iii) explore LLM reasoning over the generated queries via the [OpenAI API](https://platform.openai.com/docs/overview). The pipeline runs end to end without manual steps and logs its results. The aim is to keep the setup reproducible and automated, and to compare the tool-based results with the LLM’s answers side by side.
 
 ```mermaid
-
 flowchart TD
-  %% ausserhalb
+  %% Inputs
   A[Henshin Rules (.henshin)]
 
-  %% automatisierte Pipeline – ohne sichtbaren Titel
-  subgraph Auto[" "]
+  %% Automated pipeline
+  subgraph Auto
     direction LR
 
-    %% LLM-Branch (Label oben links)
-    subgraph LLM[" "]
-      direction LR
-      L_HDR[LLM branch]
-      subgraph LLM_PIPE[" "]
-        direction TB
-        B[Translate Henshin → Cypher]
-        C[Cypher Query Set]
-        D[LLM Reasoning (OpenAI)]
-        F[LLM Relation Matrix]
-      end
+    %% LLM Branch
+    subgraph LLM
+      direction TB
+      B[Translate Henshin → Cypher]
+      C[Cypher Query Set]
+      D[LLM Reasoning (OpenAI)]
+      F[LLM Relation Matrix]
     end
 
-    %% Static-Branch (Label oben links)
-    subgraph STATIC[" "]
-      direction LR
-      S_HDR[Static branch]
-      subgraph STATIC_PIPE[" "]
-        direction TB
-        E[Static Analysis (Henshin API + EMF MultiCDA)]
-        G[Static Relation Matrix]
-      end
+    %% Static Branch
+    subgraph STATIC
+      direction TB
+      E[Static Analysis (Henshin API + EMF MultiCDA)]
+      G[Static Relation Matrix]
     end
 
-    %% Merge/Report
     H[Binary Comparison & Report]
   end
 
-  %% Fluss
+  %% Flows
   A -->|automated pipeline| B
   B --> C -->|API Call| D --> F --> H
   A -->|API Call| E --> G --> H
-
-
-
 ```
-
 ## Thesis-Driven Objectives
 
 This thesis asks how far model-transformation analysis can be pushed with today’s tooling. The codebase is organised around four parts:
