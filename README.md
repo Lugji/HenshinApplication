@@ -4,36 +4,38 @@ This repository provides the codebase of my bachelor’s thesis **Analysis of Co
 
 ```mermaid
 flowchart TD
-  %% Inputs
-  A[Henshin Rules (.henshin)]
+  A[Henshin Rules]
 
-  %% Automated pipeline
+  %% Automated pipeline (ohne sichtbaren Titel)
   subgraph Auto
     direction LR
 
-    %% LLM Branch
+    %% LLM branch (Label oben links)
     subgraph LLM
       direction TB
-      B[Translate Henshin → Cypher]
+      L_HDR[LLM branch]
+      B[Translate Henshin to Cypher]
       C[Cypher Query Set]
       D[LLM Reasoning (OpenAI)]
       F[LLM Relation Matrix]
     end
 
-    %% Static Branch
+    %% Static branch (Label oben links)
     subgraph STATIC
       direction TB
+      S_HDR[Static branch]
       E[Static Analysis (Henshin API + EMF MultiCDA)]
       G[Static Relation Matrix]
     end
 
-    H[Binary Comparison & Report]
+    H[Binary Comparison and Report]
   end
 
-  %% Flows
+  %% Fluss
   A -->|automated pipeline| B
   B --> C -->|API Call| D --> F --> H
   A -->|API Call| E --> G --> H
+
 ```
 ## Thesis-Driven Objectives
 
