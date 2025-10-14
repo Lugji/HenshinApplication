@@ -23,6 +23,7 @@ flowchart TD
     F --> H
     G --> H
     H --> I
+```
 
 ## Thesis-Driven Objectives
 
