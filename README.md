@@ -6,17 +6,17 @@ This repository provides the codebase of my bachelor’s thesis **Analysis of Co
 
 %%{init: {'flowchart': {'htmlLabels': true}} }%%
 flowchart TD
-  A["Rule Models<br>(.henshin files)"]
-  B["Translation Services<br>extending Eclipse Henshin"]
-  C["Graph Queries<br>(Cypher)"]
-  D["ChatGPT Evaluation<br>via the OpenAI API"]
-  E["Static Henshin/EMF Analyses<br>(EMF MultiCDA)"]
+  A["Henshin Rule Set<br>(input models)"]
+  B["Translation Module<br>(Henshin → Cypher)"]
+  C["Generated Cypher<br>(graph queries)"]
+  D["LLM-Based Reasoning<br>(OpenAI)"]
+  E["Static Ground Truth<br>(Henshin API + EMF MultiCDA)"]
   F["LLM Relation Matrix"]
-  G["Henshin Relation Matrix"]
-  H["Binary Matrix Comparison & Reports"]
-  I["Consolidated Logs<br>under logs/ and GPT_Results/"]
+  G["Henshin/EMF Relation Matrix"]
+  H["Binary Comparison & Report"]
+  I["Consolidated Logs<br>(logs/ • GPT_Results/)"]
 
-  A -->|Automated orchestration| B
+  A -->|automated pipeline| B
   B --> C
   C --> D
   A --> E
