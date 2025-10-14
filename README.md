@@ -6,16 +6,23 @@ This repository provides the codebase of my bachelor’s thesis **Analysis of Co
 
 %%{init: {'flowchart': {'htmlLabels': true}} }%%
 flowchart TD
-  A["Henshin Rule Set<br>(input models)"]
-  B["Translation Module<br>(Henshin → Cypher)"]
-  C["Generated Cypher<br>(graph queries)"]
-  D["LLM-Based Reasoning<br>(OpenAI)"]
-  E["Static Ground Truth<br>(Henshin MultiCDA)"]
-  F["LLM Relation Matrix"]
-  G["Henshin/EMF Relation Matrix"]
-  H["Binary Comparison & Report"]
-  I["Consolidated Logs<br>(logs/GPT_Results/)"]
+  %% Outside the pipeline
+  A["Henshin Rules<br>(.henshin)"]
+  I["Consolidated Logs<br>(logs/ • GPT_Results/)"]
 
+  %% Grouped pipeline
+  subgraph Auto["Automated Pipeline"]
+    direction TB
+    B["Translate<br>Henshin → Cypher"]
+    C["Cypher Query Set"]
+    D["LLM Reasoning<br>(OpenAI)"]
+    E["Static Analysis<br>Henshin API + EMF MultiCDA"]
+    F["LLM Relation Matrix"]
+    G["Static Relation Matrix"]
+    H["Binary Comparison & Report"]
+  end
+
+  %% Your edges (with labels)
   A -->|automated pipeline| B
   B --> C
   C -->|API Call| D
@@ -25,6 +32,10 @@ flowchart TD
   F --> H
   G --> H
   H --> I
+
+  %% Optional: subtle styling for the group box
+  style Auto fill:#f7f7ff,stroke:#6b72ff,stroke-width:1px,stroke-dasharray:4 3
+
 
 ```
 
