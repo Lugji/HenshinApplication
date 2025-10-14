@@ -10,7 +10,7 @@ flowchart TD
   A["Henshin Rules<br>(.henshin)"]
 
   %% Gesamte automatisierte Pipeline
-  subgraph Auto[]
+  subgraph 
     direction LR
 
     %% ---- LLM-Branch: Label links oben + vertikale Kette rechts ----
