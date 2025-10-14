@@ -7,7 +7,6 @@ This repository provides the codebase of my bachelor’s thesis **Analysis of Co
 flowchart TD
   %% Outside the automated box
   A["Henshin Rules<br>(.henshin)"]
-  I["Consolidated Logs<br>(logs/ • GPT_Results/)"]
 
   %% Automated pipeline (everything inside runs without manual steps)
   subgraph Auto["Automated Pipeline (no manual steps)"]
@@ -37,7 +36,6 @@ flowchart TD
   A -->|automated pipeline| B
   B --> C -->|API Call| D --> F --> H
   A -->|API Call| E --> G --> H
-  H --> I
 
   %% Subtle styling for the box
   style Auto fill:#f7f7ff,stroke:#6b72ff,stroke-width:1px,stroke-dasharray:4 3
