@@ -3,38 +3,45 @@
 This repository provides the codebase of my bachelor’s thesis **Analysis of Conflicts and Dependencies between User Stories in the Age of ChatGPT** in model-driven engineering, conducted in the **[Software Engineering](https://www.uni-marburg.de/en/fb12/research-groups/swt)** research group. The project ties together workflows around [Henshin](https://projects.eclipse.org/projects/modeling.emft.henshin)—an in-place transformation language for the [Eclipse Modeling Framework (EMF)](https://eclipse.dev/emf/)—to (i) translate rule-based graph transformations into [Cypher](https://neo4j.com/docs/getting-started/cypher/) queries, (ii) detect conflicts and dependencies between transformation rules with EMF (MultiCDA), and (iii) explore LLM reasoning over the generated queries via the [OpenAI API](https://platform.openai.com/docs/overview). The pipeline runs end to end without manual steps and logs its results. The aim is to keep the setup reproducible and automated, and to compare the tool-based results with the LLM’s answers side by side.
 
 ```mermaid
-
 %%{init: {'flowchart': {'htmlLabels': true}} }%%
 flowchart TD
-  %% Outside the pipeline
+  %% Outside the automated box
   A["Henshin Rules<br>(.henshin)"]
   I["Consolidated Logs<br>(logs/ • GPT_Results/)"]
 
-  %% Grouped pipeline
-  subgraph Auto["Automated Pipeline"]
-    direction TB
-    B["Translate<br>Henshin → Cypher"]
-    C["Cypher Query Set"]
-    D["LLM Reasoning<br>(OpenAI)"]
-    E["Static Analysis<br>Henshin API + EMF MultiCDA"]
-    F["LLM Relation Matrix"]
-    G["Static Relation Matrix"]
+  %% Automated pipeline (everything inside runs without manual steps)
+  subgraph Auto["Automated Pipeline (no manual steps)"]
+    direction LR
+
+    %% LLM branch (left)
+    subgraph LLM["LLM branch"]
+      direction TB
+      B["Translate<br>Henshin → Cypher"]
+      C["Cypher Query Set"]
+      D["LLM Reasoning<br>(OpenAI)"]
+      F["LLM Relation Matrix"]
+    end
+
+    %% Static branch (right)
+    subgraph Static["Static branch"]
+      direction TB
+      E["Static Analysis<br>Henshin API + EMF MultiCDA"]
+      G["Static Relation Matrix"]
+    end
+
+    %% Merge/report (still automated)
     H["Binary Comparison & Report"]
   end
 
-  %% Your edges (with labels)
+  %% Flows (with your labels)
   A -->|automated pipeline| B
-  B --> C
-  C -->|API Call| D
-  A -->|API Call| E
-  D --> F
-  E --> G
-  F --> H
-  G --> H
+  B --> C -->|API Call| D --> F --> H
+  A -->|API Call| E --> G --> H
   H --> I
 
-  %% Optional: subtle styling for the group box
+  %% Subtle styling for the box
   style Auto fill:#f7f7ff,stroke:#6b72ff,stroke-width:1px,stroke-dasharray:4 3
+
 
 
 ```
