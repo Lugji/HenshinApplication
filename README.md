@@ -4,51 +4,47 @@ This repository provides the codebase of my bachelor’s thesis **Analysis of Co
 
 ```mermaid
 
-%%{init: {'flowchart': {'htmlLabels': true}} }%%
 flowchart TD
-  %% außerhalb
-  A["Henshin Rules<br>(.henshin)"]
+  %% ausserhalb
+  A[Henshin Rules (.henshin)]
 
-  %% automatisierte Pipeline – ohne Namen
-  subgraph Auto[""]
+  %% automatisierte Pipeline – ohne sichtbaren Titel
+  subgraph Auto[" "]
     direction LR
 
-    %% LLM-Branch (Label oben links als eigener Knoten)
+    %% LLM-Branch (Label oben links)
     subgraph LLM[" "]
       direction LR
-      L_HDR["LLM branch"]:::header
+      L_HDR[LLM branch]
       subgraph LLM_PIPE[" "]
         direction TB
-        B["Translate<br>Henshin → Cypher"]
-        C["Cypher Query Set"]
-        D["LLM Reasoning<br>(OpenAI)"]
-        F["LLM Relation Matrix"]
+        B[Translate Henshin → Cypher]
+        C[Cypher Query Set]
+        D[LLM Reasoning (OpenAI)]
+        F[LLM Relation Matrix]
       end
     end
 
-    %% Static-Branch (Label oben links als eigener Knoten)
+    %% Static-Branch (Label oben links)
     subgraph STATIC[" "]
       direction LR
-      S_HDR["Static branch"]:::header
+      S_HDR[Static branch]
       subgraph STATIC_PIPE[" "]
         direction TB
-        E["Static Analysis<br>Henshin API + EMF MultiCDA"]
-        G["Static Relation Matrix"]
+        E[Static Analysis (Henshin API + EMF MultiCDA)]
+        G[Static Relation Matrix]
       end
     end
 
     %% Merge/Report
-    H["Binary Comparison & Report"]
+    H[Binary Comparison & Report]
   end
 
-  %% Flüsse
+  %% Fluss
   A -->|automated pipeline| B
   B --> C -->|API Call| D --> F --> H
   A -->|API Call| E --> G --> H
 
-  %% Styles
-  classDef header fill:#ffffff,stroke:#888,stroke-width:1px,font-weight:bold;
-  style Auto fill:#f7f7ff,stroke:#6b72ff,stroke-width:1px,stroke-dasharray:4 3
 
 
 ```
