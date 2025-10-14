@@ -14,7 +14,7 @@ flowchart TD
   F["LLM Relation Matrix"]
   G["Henshin/EMF Relation Matrix"]
   H["Binary Comparison & Report"]
-  I["Consolidated Logs<br>(logs/ • GPT_Results/)"]
+  I["Consolidated Logs<br>(logs/GPT_Results/)"]
 
   A -->|automated pipeline| B
   B --> C
