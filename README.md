@@ -6,35 +6,25 @@ This repository provides the codebase of my bachelor’s thesis **Analysis of Co
 flowchart TD
   A[Henshin Rules]
 
-  %% Automated pipeline (ohne sichtbaren Titel)
   subgraph Auto
     direction LR
+    L_HDR[LLM branch]
+    B[Translate Henshin to Cypher]
+    C[Cypher Query Set]
+    D[LLM Reasoning (OpenAI)]
+    F[LLM Relation Matrix]
 
-    %% LLM branch (Label oben links)
-    subgraph LLM
-      direction TB
-      L_HDR[LLM branch]
-      B[Translate Henshin to Cypher]
-      C[Cypher Query Set]
-      D[LLM Reasoning (OpenAI)]
-      F[LLM Relation Matrix]
-    end
-
-    %% Static branch (Label oben links)
-    subgraph STATIC
-      direction TB
-      S_HDR[Static branch]
-      E[Static Analysis (Henshin API + EMF MultiCDA)]
-      G[Static Relation Matrix]
-    end
+    S_HDR[Static branch]
+    E[Static Analysis (Henshin API + EMF MultiCDA)]
+    G[Static Relation Matrix]
 
     H[Binary Comparison and Report]
   end
 
-  %% Fluss
   A -->|automated pipeline| B
   B --> C -->|API Call| D --> F --> H
   A -->|API Call| E --> G --> H
+
 
 ```
 ## Thesis-Driven Objectives
