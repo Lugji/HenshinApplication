@@ -10,7 +10,7 @@ flowchart TD
   B["Translation Module<br>(Henshin → Cypher)"]
   C["Generated Cypher<br>(graph queries)"]
   D["LLM-Based Reasoning<br>(OpenAI)"]
-  E["Static Ground Truth<br>(Henshin API + EMF MultiCDA)"]
+  E["Static Ground Truth<br>(Henshin MultiCDA)"]
   F["LLM Relation Matrix"]
   G["Henshin/EMF Relation Matrix"]
   H["Binary Comparison & Report"]
@@ -18,8 +18,8 @@ flowchart TD
 
   A -->|automated pipeline| B
   B --> C
-  C --> D
-  A --> E
+  C -->|API Call| D
+  A -->|API Call| E
   D --> F
   E --> G
   F --> H
