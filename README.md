@@ -6,14 +6,14 @@ This repository provides the codebase of my bachelor’s thesis **Analysis of Co
 
 %%{init: {'flowchart': {'htmlLabels': true}} }%%
 flowchart TD
-  %% Außerhalb der Pipeline
+  %% außerhalb
   A["Henshin Rules<br>(.henshin)"]
 
-  %% Gesamte automatisierte Pipeline
-  subgraph 
+  %% automatisierte Pipeline – ohne Namen
+  subgraph Auto[""]
     direction LR
 
-    %% ---- LLM-Branch: Label links oben + vertikale Kette rechts ----
+    %% LLM-Branch (Label oben links als eigener Knoten)
     subgraph LLM[" "]
       direction LR
       L_HDR["LLM branch"]:::header
@@ -26,7 +26,7 @@ flowchart TD
       end
     end
 
-    %% ---- Static-Branch: Label links oben + vertikale Kette rechts ----
+    %% Static-Branch (Label oben links als eigener Knoten)
     subgraph STATIC[" "]
       direction LR
       S_HDR["Static branch"]:::header
@@ -41,12 +41,12 @@ flowchart TD
     H["Binary Comparison & Report"]
   end
 
-  %% Flüsse/Labels
+  %% Flüsse
   A -->|automated pipeline| B
   B --> C -->|API Call| D --> F --> H
   A -->|API Call| E --> G --> H
 
-  %% Styling
+  %% Styles
   classDef header fill:#ffffff,stroke:#888,stroke-width:1px,font-weight:bold;
   style Auto fill:#f7f7ff,stroke:#6b72ff,stroke-width:1px,stroke-dasharray:4 3
 
