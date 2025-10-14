@@ -1,18 +1,29 @@
 # Henshin Application
 
 This repository provides the codebase of my bachelor’s thesis **Analysis of Conflicts and Dependencies between User Stories in the Age of ChatGPT** in model-driven engineering, conducted in the **[Software Engineering](https://www.uni-marburg.de/en/fb12/research-groups/swt)** research group. The project ties together workflows around [Henshin](https://projects.eclipse.org/projects/modeling.emft.henshin)—an in-place transformation language for the [Eclipse Modeling Framework (EMF)](https://www.eclipse.org/modeling/emf/)—to (i) translate rule-based graph transformations into [Cypher](https://opencypher.org/) queries, (ii) detect conflicts and dependencies between transformation rules with EMF (MultiCDA), and (iii) explore LLM reasoning over the generated queries via the [OpenAI API]([https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/overview)). The pipeline runs end to end without manual steps and logs its results. The aim is to keep the setup reproducible and automated, and to compare the tool-based results with the LLM’s answers side by side.
+
 ```mermaid
 flowchart TD
-    A[[Rule Models<br/>(.henshin files)]] -->|Automated orchestration| B[[Translation Services<br/>extending [Eclipse Henshin](https://www.eclipse.org/henshin/)]]
-    B --> C[[Graph Queries<br/>([Cypher](https://opencypher.org/))]]
-    C --> D[[ChatGPT Evaluation<br/>via the [OpenAI API](https://platform.openai.com/docs/api-reference)]]
-    A --> E[[Static Henshin/EMF Analyses<br/>([EMF](https://www.eclipse.org/modeling/emf/) MultiCDA)]]
-    D --> F[[LLM Relation Matrix]]
-    E --> G[[Henshin Relation Matrix]]
-    F --> H[[Binary Matrix Comparison & Reports]]
+    A[[Rule Models<br/>(.henshin files)]]
+    B[[Translation Services<br/>extending Eclipse Henshin]]
+    C[[Graph Queries<br/>(Cypher)]]
+    D[[ChatGPT Evaluation<br/>via the OpenAI API]]
+    E[[Static Henshin/EMF Analyses<br/>(EMF MultiCDA)]]
+    F[[LLM Relation Matrix]]
+    G[[Henshin Relation Matrix]]
+    H[[Binary Matrix Comparison & Reports]]
+    I[[Consolidated Logs<br/>under logs/ and GPT_Results/]]
+
+    A -->|Automated orchestration| B
+    B --> C
+    C --> D
+    A --> E
+    D --> F
+    E --> G
+    F --> H
     G --> H
-    H --> I[[Consolidated Logs<br/>under `logs/` and `GPT_Results/`]]
-```
+    H --> I
+
 ## Thesis-Driven Objectives
 
 This thesis asks how far model-transformation analysis can be pushed with today’s tooling. The codebase is organised around four parts:
