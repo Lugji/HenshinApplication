@@ -9,7 +9,7 @@ flowchart TD
   A["Henshin Rules<br>(.henshin)"]
 
   %% Gesamte automatisierte Pipeline
-  subgraph Auto["Automated Pipeline (no manual steps)"]
+  subgraph Auto["Automated Pipeline"]
     direction LR
 
     %% ---- LLM-Branch: Label links oben + vertikale Kette rechts ----
@@ -41,7 +41,7 @@ flowchart TD
   end
 
   %% Flüsse/Labels
-  A -->|automated pipeline| B
+  A --> B
   B --> C -->|API Call| D --> F --> H
   A -->|API Call| E --> G --> H
 
