@@ -4,16 +4,17 @@ This repository provides the codebase of my bachelor’s thesis **Analysis of Co
 
 ```mermaid
 
+%%{init: {'flowchart': {'htmlLabels': true}} }%%
 flowchart TD
-  A["Rule Models\n(.henshin files)"]
-  B["Translation Services\nextending Eclipse Henshin"]
-  C["Graph Queries\n(Cypher)"]
-  D["ChatGPT Evaluation\nvia the OpenAI API"]
-  E["Static Henshin/EMF Analyses\n(EMF MultiCDA)"]
+  A["Rule Models<br>(.henshin files)"]
+  B["Translation Services<br>extending Eclipse Henshin"]
+  C["Graph Queries<br>(Cypher)"]
+  D["ChatGPT Evaluation<br>via the OpenAI API"]
+  E["Static Henshin/EMF Analyses<br>(EMF MultiCDA)"]
   F["LLM Relation Matrix"]
   G["Henshin Relation Matrix"]
   H["Binary Matrix Comparison & Reports"]
-  I["Consolidated Logs\nunder logs/ and GPT_Results/"]
+  I["Consolidated Logs<br>under logs/ and GPT_Results/"]
 
   A -->|Automated orchestration| B
   B --> C
